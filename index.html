@@ -1,132 +1,332 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPTV Premium - Assinaturas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stream IPTV Brasil - Seu melhor IPTV para toda a família</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      text-align: center;
-      padding: 40px;
-    }
-    header {
-      margin-bottom: 30px;
-    }
-    header h1 {
-      font-size: 28px;
-      color: #222;
-    }
-    header p {
-      font-size: 18px;
-      color: #555;
-    }
-    .benefits {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-    .benefits h2 {
-      color: #28a745;
-      margin-bottom: 15px;
-    }
-    .benefits ul {
-      list-style: none;
+    * {
+      margin: 0;
       padding: 0;
-      color: #333;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    .benefits ul li {
-      margin: 10px 0;
-      font-size: 16px;
+
+    body {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      color: #c9d1d9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    header {
+      background: rgba(10, 25, 47, 0.85);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
-    h2 { color: #333; }
-    .price {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: #28a745;
+
+    header h1 {
+      color: #58a6ff;
+      font-size: 1.8rem;
     }
-    .btn {
-      display: inline-block;
-      background: #28a745;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
+
+    nav a {
+      color: #8ab4f8;
+      margin-left: 1.5rem;
       text-decoration: none;
-      font-size: 16px;
-      transition: 0.3s;
+      font-weight: 600;
     }
-    .btn:hover {
-      background: #218838;
+
+    nav a:hover {
+      color: #ffa726;
     }
-    .support {
-      margin-top: 40px;
-      font-size: 15px;
-      color: #444;
-      line-height: 1.6;
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      background: rgba(14, 23, 40, 0.8);
+      border-radius: 12px;
+      padding: 2rem;
+      gap: 2rem;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(21, 101, 192, 0.3);
+      margin-bottom: 3rem;
+    }
+
+    .hero-text {
+      flex: 1 1 320px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #a3bffa;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #ffa726, #fb8c00);
+      color: #0d1117;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .hero-image {
+      flex: 1 1 320px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(88, 166, 255, 0.4);
+    }
+
+    #planos {
+      background: rgba(21, 32, 56, 0.85);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(88, 166, 255, 0.2);
+      margin-bottom: 3rem;
+    }
+
+    #planos h3 {
+      text-align: center;
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .planos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .plano {
+      background: rgba(14, 23, 40, 0.9);
+      border-radius: 16px;
+      padding: 1.8rem 1.5rem;
+      width: 280px;
+      box-shadow: 0 8px 18px rgba(251, 140, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .plano h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #ffa726;
+    }
+
+    .plano p {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      color: #a3bffa;
+      text-align: center;
+    }
+
+    .preco {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #58a6ff;
+      margin-bottom: 1.3rem;
+    }
+
+    .botao-comprar {
+      background: linear-gradient(135deg, #58a6ff, #1c3aa9);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+
+    .botao-comprar.teste-gratis {
+      background: linear-gradient(135deg, #fb8c00, #ffa726);
+    }
+
+    #beneficios {
+      background: rgba(10, 25, 47, 0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(88, 166, 255, 0.2);
+      margin-bottom: 3rem;
+    }
+
+    #beneficios h3 {
+      text-align: center;
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .beneficios-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      color: #a3bffa;
+    }
+
+    .beneficio-item {
+      background: rgba(21, 32, 56, 0.85);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      flex: 1 1 250px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #contato {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #contato a {
+      text-decoration: none;
+      background: linear-gradient(135deg, #fb8c00, #ffa726);
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      font-weight: 700;
+      color: #0d1117;
+    }
+
+    footer {
+      background: rgba(10, 25, 47, 0.9);
+      color: #6e7d94;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .plano {
+        width: 100%;
+        max-width: 360px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>IPTV Premium - Sua TV Online Sem Limites</h1>
-    <p>Mais de <strong>10.000 canais, filmes e séries</strong> em HD e FullHD. 
-    Sem travar, com suporte <strong>24 horas por dia</strong>.</p>
+    <h1>Stream IPTV Brasil</h1>
+    <nav>
+      <a href="#planos">Planos</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <div class="benefits">
-    <h2>Por que escolher o IPTV Premium?</h2>
-    <ul>
-      <li>✅ Mais de 10.000 canais ao vivo nacionais e internacionais</li>
-      <li>✅ Filmes e séries atualizadas diariamente</li>
-      <li>✅ Qualidade HD e FullHD sem travamentos</li>
-      <li>✅ Compatível com Smart TV, Celular, TV Box e PC</li>
-      <li>✅ Suporte rápido via WhatsApp (24h por dia)</li>
-      <li>✅ Teste confiável e garantia de estabilidade</li>
-    </ul>
-  </div>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Assista TV em qualquer lugar, com sua família</h2>
+        <p>Os melhores canais do Brasil e do mundo direto no seu dispositivo com alta qualidade, estabilidade e segurança.</p>
+        <button class="btn" onclick="window.location.href='#planos'">Conheça nossos planos</button>
+      </div>
+      <div class="hero-image">
+        <img src="https://media.istockphoto.com/id/862621328/pt/foto/fam%C3%ADlia-feliz-no-sof%C3%A1-na-sala-de-relaxamento-e-usando-tablet-digital.jpg?s=612x612&w=0&k=20&c=OzkFtJtMPeBYHptZkZzhrIQTovAwJoxzFML5FPr4xYg=" alt="Família usando tablet">
+      </div>
+    </section>
 
-  <h2>Planos de Assinatura</h2>
+    <section id="planos">
+      <h3>Planos IPTV</h3>
+      <div class="planos-container">
+        <div class="plano">
+          <h4>Plano Mensal</h4>
+          <p>Acesso por 1 mês.</p>
+          <div class="preco">R$ 25,00</div>
+          <button class="botao-comprar" onclick="comprar('https://pag.ae/7__RdV6TP', 'Plano Mensal')">Assinar</button>
+          <button class="botao-comprar teste-gratis" onclick="testeGratis()">Teste Grátis</button>
+        </div>
+        <div class="plano">
+          <h4>Plano Trimestral</h4>
+          <p>3 meses com 10% de desconto.</p>
+          <div class="preco">R$ 67,50</div>
+          <button class="botao-comprar" onclick="comprar('https://pag.ae/7__RcxYEo', 'Plano Trimestral')">Assinar</button>
+          <button class="botao-comprar teste-gratis" onclick="testeGratis()">Teste Grátis</button>
+        </div>
+        <div class="plano">
+          <h4>Plano Semestral</h4>
+          <p>6 meses com 15% de desconto.</p>
+          <div class="preco">R$ 127,50</div>
+          <button class="botao-comprar" onclick="comprar('https://pag.ae/7__RgUJQm', 'Plano Semestral')">Assinar</button>
+          <button class="botao-comprar teste-gratis" onclick="testeGratis()">Teste Grátis</button>
+        </div>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>Plano Mensal - IPTV Premium</h2>
-    <p class="price">R$ 25,00</p>
-    <a class="btn" href="https://pag.ae/7__RdV6TP" target="_blank">Assinar Agora</a>
-  </div>
+    <section id="beneficios">
+      <h3>Por que escolher nosso IPTV?</h3>
+      <div class="beneficios-list">
+        <div class="beneficio-item">📺 Qualidade HD e Full HD</div>
+        <div class="beneficio-item">🌍 Canais nacionais e internacionais</div>
+        <div class="beneficio-item">📱 Funciona em todos dispositivos</div>
+        <div class="beneficio-item">💬 Suporte rápido via WhatsApp</div>
+        <div class="beneficio-item">🔒 Estável e seguro</div>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>Plano Trimestral (11% OFF)</h2>
-    <p class="price">R$ 66,75</p>
-    <a class="btn" href="https://pag.ae/7__RcxYEo" target="_blank">Assinar Agora</a>
-  </div>
+    <section id="contato">
+      <h3>Entre em contato</h3>
+      <p>Fale com a gente pelo WhatsApp para tirar dúvidas ou contratar.</p>
+      <a href="https://wa.me/5562981563191" target="_blank">Chamar no WhatsApp</a>
+    </section>
+  </main>
 
-  <div class="card">
-    <h2>Plano Semestral (15% OFF)</h2>
-    <p class="price">R$ 127,50</p>
-    <a class="btn" href="https://pag.ae/7__RgUJQm" target="_blank">Assinar Agora</a>
-  </div>
+  <footer>
+    &copy; 2025 Stream IPTV Brasil. Todos os direitos reservados.
+  </footer>
 
-  <div class="support">
-    Após a confirmação do pagamento, entre em contato com nosso 
-    <strong>suporte pelo WhatsApp</strong>, informando o 
-    <strong>e-mail utilizado na compra</strong>.<br>
-    Nosso atendimento é <strong>rápido</strong> e funciona 
-    <strong>24 horas por dia</strong>, garantindo que você receba seu acesso sem demora.
-  </div>
+  <script>
+    const numeroZap = "5562981563191";
 
+    function comprar(link, plano) {
+      window.open(link, "_blank");
+      setTimeout(() => {
+        const mensagem = `Olá! Acabei de contratar o ${plano} pelo PagSeguro. Aqui está meu email para ativação: `;
+        window.open(`https://wa.me/${numeroZap}?text=${encodeURIComponent(mensagem)}`, "_blank");
+      }, 3000);
+    }
+
+    function testeGratis() {
+      const mensagem = "Olá! Gostaria de solicitar um teste grátis do IPTV.";
+      window.open(`https://wa.me/${numeroZap}?text=${encodeURIComponent(mensagem)}`, "_blank");
+    }
+  </script>
 </body>
 </html>
